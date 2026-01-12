@@ -1,0 +1,2368 @@
+.........................................................<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMMOLUXE.SN - Agence Immobilière de Prestige</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a3a5f;
+            --secondary-color: #d4af37;
+            --accent-color: #2c5282;
+            --light-color: #f8f9fa;
+            --dark-color: #333;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(26, 58, 95, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            left: 0;
+            bottom: -5px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 0;
+            animation: panBackground 20s infinite linear;
+        }
+
+        @keyframes panBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #c19b2e;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Services Section */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .about-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background-color: #f5f7fa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 250px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            color: white;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Video Gallery */
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .video-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+            cursor: pointer;
+        }
+
+        .video-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(212, 175, 55, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .video-item:hover .video-play-btn {
+            background-color: var(--secondary-color);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* Partners Section */
+        .partners-section {
+            background-color: white;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .partner-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .partner-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .partner-btn {
+            margin-top: 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .partner-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Criteria Section */
+        .criteria {
+            background-color: #f5f7fa;
+        }
+
+        .criteria-list {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .criteria-list ul {
+            list-style: none;
+        }
+
+        .criteria-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .criteria-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Video Section */
+        .video-section {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-section video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 58, 95, 0.7);
+            z-index: 0;
+        }
+
+        .video-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            max-width: 700px;
+            padding: 2rem;
+        }
+
+        .video-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        /* Form Sections */
+        .form-section {
+            background-color: #f5f7fa;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .required:after {
+            content: ' *';
+            color: #e53e3e;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        /* Contact & Footer */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-right: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            width: 100%;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        .ai-chat-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 123, 255, 0.5);
+            z-index: 1000;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .ai-chat-float:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        .payment-options {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .payment-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 120px;
+        }
+
+        .payment-option:hover, .payment-option.active {
+            border-color: var(--secondary-color);
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        .payment-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Image Modal */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .image-modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .image-modal-caption {
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 1.1rem;
+            padding: 10px;
+        }
+
+        .close-image-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Partner Modal */
+        .partner-modal {
+            max-width: 800px;
+        }
+
+        .partner-form {
+            display: none;
+        }
+
+        .partner-form.active {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .form-container {
+                padding: 2rem;
+            }
+            
+            .video-content h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .video-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                padding: 0.7rem 1.5rem;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.7rem;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .ai-chat-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.7rem;
+                bottom: 20px;
+                left: 20px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Additional responsive adjustments for partnership modal */
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 1.5rem;
+                max-width: 95%;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            .partner-modal {
+                max-width: 95%;
+            }
+
+            .modal {
+                align-items: flex-start;
+                padding: 2rem 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .modal-content {
+                padding: 1rem;
+                max-height: 85vh;
+            }
+
+            .modal {
+                padding: 1rem 0;
+            }
+        }
+
+        /* AI Chat Modal */
+        .ai-chat-modal {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            width: 350px;
+            height: 500px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .ai-chat-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ai-chat-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .ai-chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .ai-chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 18px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .message.user {
+            background-color: var(--secondary-color);
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .message.bot {
+            background-color: white;
+            color: var(--dark-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .ai-chat-input {
+            padding: 1rem;
+            border-top: 1px solid #ddd;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .ai-chat-input input {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .ai-chat-input button {
+            padding: 0.5rem 1rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .ai-chat-input button:hover {
+            background-color: #c19b2e;
+        }
+
+        /* Mobile responsive for AI chat */
+        @media (max-width: 576px) {
+            .ai-chat-modal {
+                width: 90vw;
+                height: 70vh;
+                left: 5vw;
+                bottom: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="#" id="whatsappBtn" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- AI Chat Float Button -->
+    <a href="#" id="aiChatBtn" class="ai-chat-float">
+        <i class="fas fa-robot"></i>
+    </a>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-building"></i>
+                <span>IMMOLUXE.SN</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#nos-produits">Nos produits</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#partenaires">Partenaires</a></li>
+                <li><a href="#criteria">Critères</a></li>
+                <li><a href="#formulaire">Formulaire Client</a></li>
+                <li><a href="#paiement">Paiement</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="container hero-content">
+            <h1>IMMOLUXE.SN - Excellence Immobilière</h1>
+            <p>Votre partenaire de confiance pour la vente, l'achat et la location de propriétés de prestige. Découvrez notre sélection exclusive de villas, appartements et terrains.</p>
+            <a href="#formulaire" class="btn">Prendre Rendez-vous</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Services</h2>
+                <p>Découvrez notre gamme complète de services immobiliers</p>
+            </div>
+
+<div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Vente de Terrains</h3>
+                    <p>Des terrains bien situés pour vos projets de construction.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Location d'Appartements</h3>
+                    <p>Appartements modernes et bien équipés dans les meilleurs quartiers.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chess-queen"></i>
+                    </div>
+                    <h3>Vente de Villas</h3>
+                    <p>Villas de prestige avec des équipements haut de gamme.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Négociations</h3>
+                    <p>Nous négocions les meilleurs prix pour nos clients.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Conseils Clients</h3>
+                    <p>Des conseils experts pour faire les bons choix immobiliers.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Conception Architecturale</h3>
+                    <p>Création de plans sur mesure pour vos projets de construction.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Suivi des Réalisations</h3>
+                    <p>Accompagnement de vos projets du début à la fin.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3>Consultation</h3>
+                    <p>Étude de marché et analyse de rentabilité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Produits Section -->
+    <section class="section" id="nos-produits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Produits</h2>
+                <p>Découvrez notre sélection exclusive de propriétés immobilières</p>
+            </div>
+
+            <div class="services-grid" id="productsGrid">
+                <!-- Les produits seront ajoutés dynamiquement via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>À propos d'IMMOLUXE.SN</h2>
+                <p>Découvrez notre vision, mission et objectifs stratégiques</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Notre Vision</h3>
+                    <p>La vision d'IMMOLUXE.SN est de devenir la référence absolue et l'acteur le plus respecté dans le domaine de l'immobilier de prestige et de conseil expert à Dakar et au Sénégal. Nous aspirons à redéfinir l'expérience immobilière en élevant les standards du marché, en devenant le partenaire incontournable pour une clientèle exigeante qui recherche non seulement un bien, mais une valeur sûre, un investissement judicieux et une expérience d'acquisition exceptionnelle. Notre ambition est d'incarner l'excellence, la confiance et la parfaite maîtrise du marché local et des aspirations de notre clientèle.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Notre Mission</h3>
+                    <p>La mission quotidienne d'IMMOLUXE.SN est d'accompagner ses clients avec un niveau de professionnalisme, de discrétion et de rigueur inégalé dans la réalisation de leurs projets immobiliers. Pour nos clients, nous nous engageons à fournir un conseil stratégique, personnalisé et éclairé, en nous appuyant sur une analyse approfondie et une connaissance intime du marché dakarois. Nous nous donnons pour devoir de sécuriser chaque transaction, qu'il s'agisse d'achat, de vente, de location ou d'investissement, en garantissant la meilleure valeur, une parfaite transparence et une sérénité totale. Notre rôle est de valoriser un portefeuille sélectif de biens d'exception et de bâtir des relations durables fondées sur la satisfaction et la réussite de nos clients.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Objectifs Stratégiques</h3>
+<p>Nos objectifs stratégiques pour les prochaines années sont concrets et orientés vers une croissance qualitative. Tout d'abord, nous visons à consolider notre positionnement comme l'agence leader de l'immobilier haut de gamme à Dakar, en développant une notoriété forte auprès d'une clientèle locale et internationale exigeante. Sur le plan commercial, nous travaillerons à constituer et gérer un portefeuille exclusif d'au moins 50 propriétés premium, tout en maintenant une croissance annuelle de notre chiffre d'affaires grâce à un taux de fidélisation client élevé et à des recommandations.
+
+Opérationnellement, nous nous engageons à mettre en place et à perfectionner un processus de transaction "IMMOLUXE" standardisé, qui assurera une sécurité juridique irréprochable, une transparence financière absolue et un suivi méticuleux pour chaque dossier. Enfin, pour affirmer notre expertise, nous publierons régulièrement des analyses pointues du marché, positionnant IMMOLUXE.SN non seulement comme un intermédiaire, mais comme un véritable think-tank et une source fiable d'information sur l'immobilier de prestige au Sénégal.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Équipe de Direction</h3>
+                    <ul>
+                        <li>1- PDG : Moctar Sylla</li>
+                        <li>2- Architecte Senior: Mamadou Seck</li>
+                        <li>3- Développeur web et analyste des données : DEGUENON Luc</li>
+                        <li>4- DRH : Chargé de recrutement, Responsable de la mobilité internationale, Consultant en recrutement, Responsable des relations sociales. Dieynaba DOUMBOUYA</li>
+                        <li>5- Responsable commercial MARIAMA DOUMBOUYA</li>
+                        <li>6- QHSE (qualité hygiène sécurité et environnement) RACKY SALL</li>
+                        <li>7- Responsable finance BINETA SYLLA</li>
+                        <li>8- AVOCAT MAÎTRE MBODJ</li>
+                        <li>9- VIDÉASTES (image, vidéo) MALICK SALL</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery-section" id="galerie">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galerie Photos</h2>
+                <p>Découvrez nos réalisations et propriétés exclusives</p>
+            </div>
+            
+            <div class="gallery-grid" id="photoGallery">
+                <!-- Les photos seront ajoutées dynamiquement via JavaScript -->
+            </div>
+            
+            <div class="section-title" style="margin-top: 4rem;">
+                <h2>Vidéos Immobilières</h2>
+                <p>Visites virtuelles et présentations de nos biens</p>
+            </div>
+            
+            <div class="video-gallery" id="videoGallery">
+                <!-- Les vidéos seront ajoutées dynamiquement via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="section partners-section" id="partenaires">
+        <div class="container">
+            <div class="section-title">
+                <h2>Devenir Partenaire</h2>
+                    <p>Collaborer avec IMMOLUXE.SN pour des opportunités d'affaires exceptionnelles</p>
+            </div>
+            
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partenaire Commercial</h3>
+                    <p>Collaboration pour la vente et la promotion de biens immobiliers avec des commissions attractives.</p>
+                    <button class="btn partner-btn" data-type="commercial">Devenir Partenaire</button>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Partenaire Promoteur</h3>
+                    <p>Développement conjoint de projets immobiliers avec partage des bénéfices.</p>
+                    <button class="btn partner-btn" data-type="promoteur">Devenir Partenaire</button>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Partenaire Propriétaire</h3>
+                    <p>Mettre vos biens en gestion avec IMMOLUXE pour une gestion professionnelle et sécurisée.</p>
+                    <button class="btn partner-btn" data-type="proprietaire">Devenir Partenaire</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Criteria Section -->
+    <section class="section criteria" id="criteria">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Critères</h2>
+                <p>Conditions générales pour nos services de location</p>
+            </div>
+            
+            <div class="criteria-list">
+                <ul>
+                    <li>Pour les locations de maisons et appartements, une avance de 3 mois de loyer est obligatoire</li>
+                    <li>IMMOLUXE.SN accepte les clients étrangers solvables (selon l'avis ou décision du bailleur)</li>
+                    <li>IMMOLUXE.SN accepte également les citoyens du pays</li>
+                    <li>Garantie locative exigée pour toutes les locations</li>
+                    <li>Dossier complet requis (pièces d'identité, justificatifs de revenus, etc.)</li>
+                    <li>Visite des biens sur rendez-vous uniquement</li>
+                    <li>Frais d'agence applicables selon le type de transaction</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="video-overlay"></div>
+        <video autoplay muted loop id="backgroundVideo">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-house-exterior-4323-large.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+        <div class="container video-content">
+            <h2>Découvrez Nos Propriétés Exceptionnelles</h2>
+            <p>Parcourez notre portfolio de biens immobiliers exclusifs et laissez-vous séduire par l'excellence.</p>
+            <a href="#formulaire" class="btn">Demander une Visite</a>
+        </div>
+    </section>
+
+    <!-- Client Form Section -->
+    <section class="section form-section" id="formulaire">
+        <div class="container">
+            <div class="section-title">
+                <h2>Formulaire Client</h2>
+                <p>Remplissez ce formulaire pour nous faire part de vos besoins</p>
+            </div>
+            
+            <div class="form-container">
+                <form id="clientForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nom" class="required">Nom</label>
+                            <input type="text" id="nom" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="prenom" class="required">Prénom</label>
+                            <input type="text" id="prenom" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="required">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telephone" class="required">Téléphone</label>
+                        <input type="tel" id="telephone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="adresse" class="required">Adresse</label>
+                        <input type="text" id="adresse" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="besoin" class="required">Besoin</label>
+                        <select id="besoin" class="form-control" required>
+                            <option value="">Sélectionnez votre besoin</option>
+                            <option value="location">Location d'appartement</option>
+                            <option value="vente_maison">Achat d'une maison</option>
+                            <option value="vente_terrain">Achat d'un terrain</option>
+                            <option value="vente_villa">Achat d'une villa</option>
+                            <option value="conseil">Conseil en immobilier</option>
+                            <option value="conception">Conception architecturale</option>
+                            <option value="negociation">Service de négociation</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message additionnel</label>
+                        <textarea id="message" class="form-control" rows="4" placeholder="Décrivez plus en détail votre demande..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn" style="width: 100%;">Soumettre la Demande</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="section" id="paiement">
+        <div class="container">
+            <div class="section-title">
+                <h2>Paiement en Ligne</h2>
+                <p>Effectuez vos paiements de loyer, avances ou achats en toute sécurité</p>
+            </div>
+            
+            <div class="form-container">
+                <form id="paymentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pay_nom" class="required">Nom et Prénoms</label>
+                            <input type="text" id="pay_nom" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pay_telephone" class="required">Téléphone</label>
+                            <input type="tel" id="pay_telephone" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pay_email" class="required">Email</label>
+                        <input type="email" id="pay_email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pay_adresse" class="required">Adresse / Zone</label>
+                            <input type="text" id="pay_adresse" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pay_date" class="required">Date de la demande</label>
+                        <input type="datetime-local" id="pay_date" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pay_type" class="required">Type de transaction</label>
+                        <select id="pay_type" class="form-control" required>
+                            <option value="">Sélectionnez une option</option>
+                            <option value="loyer">Paiement de loyer</option>
+                            <option value="avance">Avance pour loyer</option>
+                            <option value="achat_terrain">Achat de terrain</option>
+                            <option value="achat_maison">Achat de maison</option>
+                            <option value="achat_villa">Achat de villa</option>
+                            <option value="vente">Vente d'un bien</option>
+                            <option value="autre_paiement">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pay_montant" class="required">Montant (FCFA)</label>
+                        <input type="number" id="pay_montant" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pay_details">Détails supplémentaires</label>
+                        <textarea id="pay_details" class="form-control" rows="3" placeholder="Référence du bien, période concernée, etc."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="button" id="choosePaymentMethod" class="btn" style="width: 100%;">Choisir le Mode de Paiement</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactez-nous</h2>
+                <p>Notre équipe est à votre disposition pour répondre à toutes vos questions</p>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Adresse</h3>
+                        <p>Liberté 6 Extension, en face de cimetière St Lazar</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Téléphone</h3>
+                        <p>+221 772185138</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>smoctar729@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <h3>PDG</h3>
+                        <p>Moctar Sylla</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <div>
+                        <h3>Service de Conciergerie</h3>
+                        <p>
+                            <strong>SUNRISE GROUPE Conciergerie:</strong> <a href="https://conciergerie.sunrise-groupe.com" target="_blank" style="color: var(--primary-color); text-decoration: none;">Visiter le site(cliquez-ici)</a><br>
+                            <strong>Site Principal:</strong> <a href="https://sunrise-groupe.com/" target="_blank" style="color: var(--primary-color); text-decoration: none;">Visiter le site(cliquez-ici)</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <i class="fas fa-building"></i>
+                    <span>IMMOLUXE.SN</span>
+                </div>
+                
+                <div>
+                    <p>Votre excellence immobilière avec plus de 16 ans d'expérience</p>
+                </div>
+                
+                <div>
+                    <p>Suivez-nous sur les réseaux sociaux</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://www.facebook.com/share/g/1ab3HUvcx1/" style="color: white; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: white; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: white; margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 IMMOLUXE.SN. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Payment Method Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <h3>Choisissez votre mode de paiement</h3>
+            <p>Sélectionnez la méthode de paiement que vous souhaitez utiliser</p>
+            
+            <div class="payment-options">
+                <div class="payment-option" data-method="orange">
+                    <div class="payment-icon" style="color: #FF6600;">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <span>Orange Money</span>
+                </div>
+                
+                <div class="payment-option" data-method="wave">
+                    <div class="payment-icon" style="color: #1E90FF;">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <span>Wave</span>
+                </div>
+                
+                <div class="payment-option" data-method="cb">
+                    <div class="payment-icon" style="color: #0066CC;">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <span>Carte Bancaire</span>
+                </div>
+            </div>
+            
+            <div class="form-group" style="margin-top: 2rem;">
+                <button type="button" id="confirmPayment" class="btn" style="width: 100%;">Confirmer et Envoyer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal">
+        <div class="image-modal-content">
+            <button class="close-image-modal" id="closeImageModal">&times;</button>
+            <img id="modalImage" src="" alt="">
+            <div class="image-modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
+
+    <!-- Partner Modal -->
+    <div class="modal" id="partnerModal">
+        <div class="modal-content partner-modal">
+            <button class="close-modal" id="closePartnerModal">&times;</button>
+            <h3 id="partnerModalTitle">Devenir Partenaire Commercial</h3>
+
+            <div id="partnerFormCommercial" class="partner-form">
+                <form id="commercialPartnerForm">
+                    <div class="form-group">
+                        <label for="company_name" class="required">Nom de l'entreprise</label>
+                        <input type="text" id="company_name" class="form-control" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact_person" class="required">Personne de contact</label>
+                            <input type="text" id="contact_person" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company_phone" class="required">Téléphone</label>
+                            <input type="tel" id="company_phone" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company_email" class="required">Email</label>
+                        <input type="email" id="company_email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company_website">Site web</label>
+                        <input type="url" id="company_website" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company_experience" class="required">Expérience dans l'immobilier</label>
+                        <select id="company_experience" class="form-control" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="moins_1">Moins d'1 an</option>
+                            <option value="1_3">1-3 ans</option>
+                            <option value="3_5">3-5 ans</option>
+                            <option value="plus_5">Plus de 5 ans</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company_message">Message</label>
+                        <textarea id="company_message" class="form-control" rows="4" placeholder="Présentez votre entreprise et vos motivations..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn" style="width: 100%;">Envoyer la Demande de Partenariat</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="partnerFormPromoteur" class="partner-form">
+                <form id="promoteurPartnerForm">
+                    <div class="form-group">
+                        <label for="promoteur_name" class="required">Nom du promoteur</label>
+                        <input type="text" id="promoteur_name" class="form-control" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="promoteur_phone" class="required">Téléphone</label>
+                            <input type="tel" id="promoteur_phone" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="promoteur_email" class="required">Email</label>
+                            <input type="email" id="promoteur_email" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project_type" class="required">Type de projet</label>
+                        <select id="project_type" class="form-control" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="residence">Résidence</option>
+                            <option value="appartements">Appartements</option>
+                            <option value="villas">Villas</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="mixte">Mixte</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project_location" class="required">Localisation du projet</label>
+                        <input type="text" id="project_location" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="investment_amount" class="required">Montant d'investissement prévu (FCFA)</label>
+                        <input type="number" id="investment_amount" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="promoteur_message">Message</label>
+                        <textarea id="promoteur_message" class="form-control" rows="4" placeholder="Décrivez votre projet..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn" style="width: 100%;">Envoyer la Demande de Partenariat</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="partnerFormProprietaire" class="partner-form">
+                <form id="proprietairePartnerForm">
+                    <div class="form-group">
+                        <label for="owner_name" class="required">Nom du propriétaire</label>
+                        <input type="text" id="owner_name" class="form-control" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="owner_phone" class="required">Téléphone</label>
+                            <input type="tel" id="owner_phone" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="owner_email" class="required">Email</label>
+                            <input type="email" id="owner_email" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="property_type" class="required">Type de bien</label>
+                        <select id="property_type" class="form-control" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="appartement">Appartement</option>
+                            <option value="villa">Villa</option>
+                            <option value="maison">Maison</option>
+                            <option value="terrain">Terrain</option>
+                            <option value="bureau">Bureau</option>
+                            <option value="commercial">Local commercial</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="property_location" class="required">Localisation du bien</label>
+                        <input type="text" id="property_location" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="property_status" class="required">État du bien</label>
+                        <select id="property_status" class="form-control" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="neuf">Neuf</option>
+                            <option value="bon_etat">Bon état</option>
+                            <option value="renovation">À rénover</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="owner_message">Message</label>
+                        <textarea id="owner_message" class="form-control" rows="4" placeholder="Informations supplémentaires sur le bien..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn" style="width: 100%;">Envoyer la Demande de Partenariat</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Chat Modal -->
+    <div class="ai-chat-modal" id="aiChatModal">
+        <div class="ai-chat-header">
+            <h3>Assistant IMMOLUXE</h3>
+            <button class="ai-chat-close" id="closeAiChat">&times;</button>
+        </div>
+        <div class="ai-chat-messages" id="aiChatMessages">
+            <div class="message bot">
+                Bonjour ! Je suis l'assistant virtuel d'IMMOLUXE.SN. Comment puis-je vous aider aujourd'hui ? Posez-moi une question sur nos services, propriétés ou critères.
+            </div>
+        </div>
+        <div class="ai-chat-input">
+            <input type="text" id="aiChatInput" placeholder="Tapez votre question ici..." maxlength="200">
+            <button id="sendAiMessage">Envoyer</button>
+        </div>
+    </div>
+
+    <script>
+        // Données pour la galerie photos
+        const galleryPhotos = [
+            {
+                url: "images/IMMOLUXE.png",
+                title: "IMMOLUXE.SN"
+            },
+            {
+                url: "images/Grand Hôtel à vendre sises à Saint Louis.png",
+                title: "Grand Hôtel à vendre sises à Saint Louis"
+            },
+            {
+                url: "images/img1.png",
+                title: "Grand Hôtel"
+            },
+            {
+                url: "images/img2.png",
+                title: "Immeuble en pleine ville"
+            },
+            {
+                url: "images/img3.png",
+                title: "Villa R+2 de luxe à vendre sises aux Almadies, derrière Philippe Morris, à proximité de l’École Américaine"
+            },
+            {
+                url: "images/img4.png",
+                title: "Résidence Sécurisée"
+            },
+            {
+                url: "images/img5.png",
+                title: "Propriété Exclusive 5"
+            },
+            {
+                url: "images/img6.png",
+                title: "Propriété Exclusive 6"
+            },
+            {
+                url: "images/img7.png",
+                title: "Propriété Exclusive 7"
+            },
+            {
+                url: "images/img8.png",
+                title: "Propriété Exclusive 8"
+            },
+            {
+                url: "images/img9.png",
+                title: "Propriété Exclusive 9"
+            },
+            {
+                url: "images/img10.png",
+                title: "Propriété Exclusive 10"
+            },
+        ];
+
+        // Données pour la galerie vidéos
+        const galleryVideos = [
+            {
+                url: "https://assets.mixkit.co/videos/preview/mixkit-modern-house-exterior-4323-large.mp4",
+                title: "SOMONE  Villa de rêve à vendre"
+            },
+        ];
+
+        // Données pour les produits
+        const products = [
+            {
+                image: "images/img16.jpg",
+                zone: "Nguerigne",
+                description: "Nous avons le plaisir de vous présenter notre nouveau programme immobilier Maison Merveille en cours de commercialisation sur Nguerigne. Ce complexe de prestige sera composé de sept villas haut de gamme allant de 537 à 1138 m2 sur deux niveaux. Ce projet répondant aux standards de qualité les plus élevés sera réalisé avec un très haut niveau de finition . La livraison est prévues au second semestre 2026 . Les appels de fond se feront au fur et à mesure de l'état d'avancement des travaux . Nous sommes à votre disposition pour vous procurer toutes les informations nécessaires et vous faire une présentation du projet à votre convenance."
+            },
+            {
+                image: "images/img17.jpg",
+                zone: "Nguerigne",
+                description: "Nous avons le plaisir de vous présenter notre nouveau programme immobilier Maison Merveille en cours de commercialisation sur Nguerigne. Ce complexe de prestige sera composé de sept villas haut de gamme allant de 537 à 1138 m2 sur deux niveaux. Ce projet répondant aux standards de qualité les plus élevés sera réalisé avec un très haut niveau de finition . La livraison est prévues au second semestre 2026 . Les appels de fond se feront au fur et à mesure de l'état d'avancement des travaux . Nous sommes à votre disposition pour vous procurer toutes les informations nécessaires et vous faire une présentation du projet à votre convenance."
+            },
+            {
+                image: "images/img18.jpg",
+                zone: "Nguerigne",
+                description: "Nous avons le plaisir de vous présenter notre nouveau programme immobilier Maison Merveille en cours de commercialisation sur Nguerigne. Ce complexe de prestige sera composé de sept villas haut de gamme allant de 537 à 1138 m2 sur deux niveaux. Ce projet répondant aux standards de qualité les plus élevés sera réalisé avec un très haut niveau de finition . La livraison est prévues au second semestre 2026 . Les appels de fond se feront au fur et à mesure de l'état d'avancement des travaux . Nous sommes à votre disposition pour vous procurer toutes les informations nécessaires et vous faire une présentation du projet à votre convenance."
+            },
+            {
+                image: "images/img19.jpg",
+                zone: "Nguerigne",
+                description: "Nous avons le plaisir de vous présenter notre nouveau programme immobilier Maison Merveille en cours de commercialisation sur Nguerigne. Ce complexe de prestige sera composé de sept villas haut de gamme allant de 537 à 1138 m2 sur deux niveaux. Ce projet répondant aux standards de qualité les plus élevés sera réalisé avec un très haut niveau de finition . La livraison est prévues au second semestre 2026 . Les appels de fond se feront au fur et à mesure de l'état d'avancement des travaux . Nous sommes à votre disposition pour vous procurer toutes les informations nécessaires et vous faire une présentation du projet à votre convenance."
+            },
+            {
+                image: "images/img20.jpg",
+                zone: "Nguerigne",
+                description: "Nous avons le plaisir de vous présenter notre nouveau programme immobilier Maison Merveille en cours de commercialisation sur Nguerigne. Ce complexe de prestige sera composé de sept villas haut de gamme allant de 537 à 1138 m2 sur deux niveaux. Ce projet répondant aux standards de qualité les plus élevés sera réalisé avec un très haut niveau de finition . La livraison est prévues au second semestre 2026 . Les appels de fond se feront au fur et à mesure de l'état d'avancement des travaux . Nous sommes à votre disposition pour vous procurer toutes les informations nécessaires et vous faire une présentation du projet à votre convenance."
+            }
+        ];
+
+        // Populate Products Grid
+        const productsGrid = document.getElementById('productsGrid');
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'service-card';
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.zone}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                <h4 style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 0.5rem;">${product.zone}</h4>
+                <p style="font-size: 0.9rem; line-height: 1.4; color: var(--dark-color);">${product.description}</p>
+            `;
+            productsGrid.appendChild(productCard);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // WhatsApp Button
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        whatsappBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const message = encodeURIComponent("Bonjour IMMOLUXE.SN ! Puis-je discuter avec quelqu'un ?");
+            window.open(`https://wa.me/221772185138?text=${message}`, '_blank');
+        });
+        
+        // Populate Photo Gallery
+        const photoGallery = document.getElementById('photoGallery');
+        galleryPhotos.forEach(photo => {
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
+            galleryItem.innerHTML = `
+                <img src="${photo.url}" alt="${photo.title}">
+                <div class="gallery-overlay">
+                    <h4>${photo.title}</h4>
+                </div>
+            `;
+            
+            galleryItem.addEventListener('click', () => {
+                openImageModal(photo.url, photo.title);
+            });
+            
+            photoGallery.appendChild(galleryItem);
+        });
+        
+        // Populate Video Gallery
+        const videoGallery = document.getElementById('videoGallery');
+        galleryVideos.forEach(video => {
+            const videoItem = document.createElement('div');
+            videoItem.className = 'video-item';
+            videoItem.innerHTML = `
+                <video muted loop>
+                    <source src="${video.url}" type="video/mp4">
+                </video>
+                <div class="video-play-btn">
+                    <i class="fas fa-play"></i>
+                </div>
+            `;
+            
+            const videoElement = videoItem.querySelector('video');
+            const playBtn = videoItem.querySelector('.video-play-btn');
+            
+            playBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (videoElement.paused) {
+                    videoElement.play();
+                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                } else {
+                    videoElement.pause();
+                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            });
+            
+            videoGallery.appendChild(videoItem);
+        });
+        
+        // Image Modal Functions
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        const closeImageModal = document.getElementById('closeImageModal');
+        
+        function openImageModal(src, caption) {
+            modalImage.src = src;
+            modalCaption.textContent = caption;
+            imageModal.style.display = 'flex';
+        }
+        
+        closeImageModal.addEventListener('click', () => {
+            imageModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                imageModal.style.display = 'none';
+            }
+        });
+        
+        // Partner Modal Logic
+        const partnerButtons = document.querySelectorAll('.partner-btn');
+        const partnerModal = document.getElementById('partnerModal');
+        const closePartnerModal = document.getElementById('closePartnerModal');
+        const partnerModalTitle = document.getElementById('partnerModalTitle');
+        const partnerForms = {
+            commercial: document.getElementById('partnerFormCommercial'),
+            promoteur: document.getElementById('partnerFormPromoteur'),
+            proprietaire: document.getElementById('partnerFormProprietaire')
+        };
+        
+        partnerButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const partnerType = button.getAttribute('data-type');
+                
+                // Hide all forms
+                Object.values(partnerForms).forEach(form => {
+                    form.classList.remove('active');
+                });
+                
+                // Show the correct form and set title
+                if (partnerType === 'commercial') {
+                    partnerForms.commercial.classList.add('active');
+                    partnerModalTitle.textContent = 'Devenir Partenaire Commercial';
+                } else if (partnerType === 'promoteur') {
+                    partnerForms.promoteur.classList.add('active');
+                    partnerModalTitle.textContent = 'Devenir Partenaire Promoteur';
+                } else if (partnerType === 'proprietaire') {
+                    partnerForms.proprietaire.classList.add('active');
+                    partnerModalTitle.textContent = 'Devenir Partenaire Propriétaire';
+                }
+                
+                partnerModal.style.display = 'flex';
+            });
+        });
+        
+        closePartnerModal.addEventListener('click', () => {
+            partnerModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === partnerModal) {
+                partnerModal.style.display = 'none';
+            }
+        });
+        
+        // Partner Form Submissions
+        document.getElementById('commercialPartnerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitPartnerForm('commercial', this);
+        });
+        
+        document.getElementById('promoteurPartnerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitPartnerForm('promoteur', this);
+        });
+        
+        document.getElementById('proprietairePartnerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitPartnerForm('proprietaire', this);
+        });
+        
+        function submitPartnerForm(type, form) {
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            const subject = encodeURIComponent(`Demande de partenariat ${type} - ${data.company_name || data.promoteur_name || data.owner_name}`);
+            const body = encodeURIComponent(`
+Bonjour IMMOLUXE.SN,
+
+Je souhaite devenir partenaire ${type} avec les informations suivantes :
+
+${Object.entries(data).map(([key, value]) => `${key}: ${value}`).join('\n')}
+
+Je vous prie de bien vouloir examiner ma demande et me recontacter pour discuter des opportunités de collaboration.
+
+Cordialement,
+${data.contact_person || data.promoteur_name || data.owner_name}
+            `);
+            
+            window.location.href = `mailto:smoctar729@gmail.com?subject=${subject}&body=${body}`;
+            
+            alert(`Merci pour votre demande de partenariat! Vous allez être redirigé vers votre client email. Veuillez valider l'envoi du message.`);
+            
+            form.reset();
+            partnerModal.style.display = 'none';
+        }
+        
+        // Client Form Submission
+        const clientForm = document.getElementById('clientForm');
+        clientForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = {
+                nom: document.getElementById('nom').value,
+                prenom: document.getElementById('prenom').value,
+                email: document.getElementById('email').value,
+                telephone: document.getElementById('telephone').value,
+                adresse: document.getElementById('adresse').value,
+                besoin: document.getElementById('besoin').value,
+                message: document.getElementById('message').value,
+                date: new Date().toLocaleString('fr-FR')
+            };
+            
+            // Create email content
+            const subject = encodeURIComponent(`Nouvelle demande client - ${formData.nom} ${formData.prenom}`);
+            const body = encodeURIComponent(`
+Bonjour IMMOLUXE.SN,
+
+Je vous contacte via votre site web avec les informations suivantes :
+
+Nom: ${formData.nom}
+Prénom: ${formData.prenom}
+Email: ${formData.email}
+Téléphone: ${formData.telephone}
+Adresse: ${formData.adresse}
+Besoin: ${formData.besoin}
+Message: ${formData.message}
+
+Date de la demande: ${formData.date}
+
+Je vous prie de bien vouloir me recontacter pour discuter de ma demande.
+
+Cordialement,
+${formData.nom} ${formData.prenom}
+            `);
+            
+            // Redirect to email client
+            window.location.href = `mailto:smoctar729@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Show success message
+            alert("Merci pour votre demande! Vous allez être redirigé vers votre client email. Veuillez valider l'envoi du message.");
+            
+            // Reset form
+            clientForm.reset();
+        });
+        
+        // Payment Modal Logic
+        const choosePaymentMethod = document.getElementById('choosePaymentMethod');
+        const paymentModal = document.getElementById('paymentModal');
+        const closeModal = document.getElementById('closeModal');
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        const confirmPayment = document.getElementById('confirmPayment');
+        let selectedPaymentMethod = null;
+        
+        choosePaymentMethod.addEventListener('click', () => {
+            // Validate payment form first
+            const paymentForm = document.getElementById('paymentForm');
+            if (!paymentForm.checkValidity()) {
+                alert("Veuillez remplir tous les champs obligatoires du formulaire de paiement.");
+                paymentForm.reportValidity();
+                return;
+            }
+            
+            paymentModal.style.display = 'flex';
+        });
+        
+        closeModal.addEventListener('click', () => {
+            paymentModal.style.display = 'none';
+        });
+        
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                paymentOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                selectedPaymentMethod = option.getAttribute('data-method');
+            });
+        });
+        
+        confirmPayment.addEventListener('click', () => {
+            if (!selectedPaymentMethod) {
+                alert("Veuillez sélectionner un mode de paiement.");
+                return;
+            }
+            
+            // Collect payment form data
+            const paymentData = {
+                nom: document.getElementById('pay_nom').value,
+                telephone: document.getElementById('pay_telephone').value,
+                email: document.getElementById('pay_email').value,
+                adresse: document.getElementById('pay_adresse').value,
+                date: document.getElementById('pay_date').value,
+                type: document.getElementById('pay_type').value,
+                montant: document.getElementById('pay_montant').value,
+                details: document.getElementById('pay_details').value,
+                methode: selectedPaymentMethod
+            };
+            
+            // Create WhatsApp message
+            const whatsappMessage = encodeURIComponent(`
+Bonjour IMMOLUXE.SN,
+
+Je souhaite effectuer un paiement avec les détails suivants :
+
+Nom et Prénoms: ${paymentData.nom}
+Téléphone: ${paymentData.telephone}
+Email: ${paymentData.email}
+Adresse/Zone: ${paymentData.adresse}
+Date de la demande: ${paymentData.date}
+Type de transaction: ${paymentData.type}
+Montant: ${paymentData.montant} FCFA
+Méthode de paiement: ${paymentData.methode}
+Détails: ${paymentData.details}
+
+Je vous prie de bien vouloir me fournir les instructions pour finaliser ce paiement.
+
+Cordialement,
+${paymentData.nom}
+            `);
+            
+            // Close modal
+            paymentModal.style.display = 'none';
+            
+            // Open WhatsApp with the message
+            window.open(`https://wa.me/221772185138?text=${whatsappMessage}`, '_blank');
+
+        // Reset form
+        paymentForm.reset();
+    });
+
+    // AI Chat Modal Logic
+    const aiChatBtn = document.getElementById('aiChatBtn');
+    const aiChatModal = document.getElementById('aiChatModal');
+    const closeAiChat = document.getElementById('closeAiChat');
+    const aiChatMessages = document.getElementById('aiChatMessages');
+    const aiChatInput = document.getElementById('aiChatInput');
+    const sendAiMessage = document.getElementById('sendAiMessage');
+
+    // Open AI Chat Modal
+    aiChatBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        aiChatModal.style.display = 'flex';
+    });
+
+    // Close AI Chat Modal
+    closeAiChat.addEventListener('click', () => {
+        aiChatModal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === aiChatModal) {
+            aiChatModal.style.display = 'none';
+        }
+    });
+
+    // Send message function
+    function sendMessage() {
+        const message = aiChatInput.value.trim();
+        if (message === '') return;
+
+        // Add user message
+        addMessage(message, 'user');
+
+        // Clear input
+        aiChatInput.value = '';
+
+        // Generate bot response
+        setTimeout(() => {
+            const response = generateResponse(message);
+            addMessage(response, 'bot');
+        }, 500);
+    }
+
+    // Add message to chat
+    function addMessage(text, type) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${type}`;
+        messageDiv.textContent = text;
+        aiChatMessages.appendChild(messageDiv);
+        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+    }
+
+    // Generate AI response based on keywords
+    function generateResponse(userMessage) {
+        const message = userMessage.toLowerCase();
+
+        // Services related
+        if (message.includes('service') || message.includes('services')) {
+            return "IMMOLUXE.SN offre une gamme complète de services immobiliers : vente de terrains, location d'appartements, vente de villas, négociations, conseils clients, conception architecturale, suivi des réalisations et consultation. Comment puis-je vous aider spécifiquement ?";
+        }
+
+        if (message.includes('vente') && message.includes('terrain')) {
+            return "Nous proposons des terrains bien situés pour vos projets de construction. Nos terrains sont sélectionnés dans les meilleurs quartiers de Dakar et ses environs.";
+        }
+
+        if (message.includes('location') || message.includes('appartement')) {
+            return "Pour la location d'appartements, nous proposons des biens modernes et bien équipés dans les meilleurs quartiers. Une avance de 3 mois de loyer est obligatoire, et une garantie locative est exigée.";
+        }
+
+        if (message.includes('villa') || message.includes('vente') && message.includes('villa')) {
+            return "Nos villas de prestige offrent des équipements haut de gamme. Découvrez notre sélection exclusive de villas dans notre galerie photos.";
+        }
+
+        if (message.includes('conseil') || message.includes('conseils')) {
+            return "IMMOLUXE.SN vous offre des conseils experts pour faire les bons choix immobiliers. Notre équipe vous accompagne dans toutes vos décisions.";
+        }
+
+        if (message.includes('formulaire') || message.includes('formulaires')) {
+            return "IMMOLUXE.SN met à votre disposition des formulaires vous permettant de discuter avec nous en privé. Ces formulaires sont également sur le site. Notre équipe vous accompagne dans toutes vos décisions.";
+        }
+
+        if (message.includes('conception') || message.includes('architectural')) {
+            return "Nous proposons des services de conception architecturale sur mesure pour vos projets de construction.";
+        }
+
+        if (message.includes('suivi') || message.includes('réalisation')) {
+            return "Notre équipe assure un suivi complet de vos projets immobiliers du début à la fin.";
+        }
+
+        if (message.includes('consultation')) {
+            return "Nos services de consultation incluent l'étude de marché et l'analyse de rentabilité pour vos investissements.";
+        }
+
+        // About section
+        if (message.includes('vision') || message.includes('mission') || message.includes('objectif') || message.includes('à propos') || message.includes('about')) {
+            return "IMMOLUXE.SN aspire à devenir la référence absolue dans l'immobilier de prestige à Dakar. Notre mission est d'accompagner nos clients avec professionnalisme et rigueur. Découvrez plus sur notre vision, mission et objectifs stratégiques dans la section 'À propos'.";
+        }
+
+        // Partners
+        if (message.includes('partenaire') || message.includes('partenaires')) {
+            return "IMMOLUXE.SN propose trois types de partenariats : Commercial (collaboration pour la vente), Promoteur (développement conjoint de projets), et Propriétaire (gestion professionnelle de vos biens). Contactez-nous pour en savoir plus.";
+        }
+
+        // Criteria
+        if (message.includes('critère') || message.includes('criteria') || message.includes('condition')) {
+            return "Pour les locations : avance de 3 mois obligatoire, garantie locative exigée, dossier complet requis. Nous acceptons les clients étrangers solvables. Visites sur rendez-vous uniquement.";
+        }
+
+        if (message.includes('avance') || message.includes('loyer')) {
+            return "Pour les locations de maisons et appartements, une avance de 3 mois de loyer est obligatoire.";
+        }
+
+        if (message.includes('garantie')) {
+            return "Une garantie locative est exigée pour toutes les locations chez IMMOLUXE.SN.";
+        }
+
+        if (message.includes('étranger') || message.includes('foreign')) {
+            return "IMMOLUXE.SN accepte les clients étrangers solvables selon l'avis ou la décision du bailleur.";
+        }
+
+        // Contact
+        if (message.includes('contact') || message.includes('téléphone') || message.includes('phone')) {
+            return "Contactez-nous au +221 772185138 ou par email à smoctar729@gmail.com. Notre adresse : Liberté 6 Extension, en face de cimetière St Lazar.";
+        }
+
+        if (message.includes('email')) {
+            return "Notre email : smoctar729@gmail.com";
+        }
+
+        if (message.includes('adresse') || message.includes('address')) {
+            return "Notre adresse : Liberté 6 Extension, en face de cimetière St Lazar, Dakar.";
+        }
+
+        if (message.includes('pdg') || message.includes('ceo') || message.includes('directeur')) {
+            return "Notre PDG est Moctar Sylla.";
+        }
+
+        if (message.includes('conciergerie')) {
+            return "Découvrez notre service de conciergerie SUNRISE GROUPE : https://conciergerie.sunrise-groupe.com et le site principal : https://sunrise-groupe.com";
+        }
+
+        // Properties/Gallery
+        if (message.includes('propriété') || message.includes('property') || message.includes('galerie') || message.includes('gallery')) {
+            return "Découvrez notre sélection exclusive de propriétés dans la galerie photos : villas de luxe, hôtels, résidences sécurisées. Consultez également nos vidéos immobilières.";
+        }
+
+        if (message.includes('photo') || message.includes('image')) {
+            return "Notre galerie photos présente nos propriétés exclusives : villas, hôtels, résidences. Cliquez sur les images pour les agrandir.";
+        }
+
+        if (message.includes('vidéo') || message.includes('video')) {
+            return "Consultez nos vidéos immobilières pour des visites virtuelles de nos biens exceptionnels.";
+        }
+
+        // Payment
+        if (message.includes('paiement') || message.includes('payment') || message.includes('payer')) {
+            return "Pour effectuer un paiement, rendez-vous dans la section 'Paiement en Ligne'. Nous acceptons Orange Money, Wave et Carte Bancaire.";
+        }
+
+        // Default responses
+        if (message.includes('bonjour') || message.includes('salut') || message.includes('hello')) {
+            return "Bonjour ! Comment puis-je vous aider aujourd'hui ? Je peux vous renseigner sur nos services, propriétés, critères de location ou nos coordonnées.";
+        }
+
+        if (message.includes('merci') || message.includes('thank')) {
+            return "De rien ! N'hésitez pas si vous avez d'autres questions sur IMMOLUXE.SN.";
+        }
+
+        if (message.includes('au revoir') || message.includes('bye')) {
+            return "Au revoir ! À bientôt chez IMMOLUXE.SN.";
+        }
+
+        // Generic response
+        return "Je suis l'assistant virtuel d'IMMOLUXE.SN. Je peux vous aider avec des informations sur nos services (vente, location, conseils), nos propriétés, nos critères de location, nos coordonnées ou nos partenariats. Quelle est votre question ?";
+    }
+
+    // Event listeners for sending messages
+    sendAiMessage.addEventListener('click', sendMessage);
+    aiChatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+    </script>
+</body>
+</html>
+  
