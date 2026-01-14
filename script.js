@@ -1,3 +1,4 @@
+console.log("Script chargé !");
 // Données pour la galerie photos
 const galleryPhotos = [
     {
